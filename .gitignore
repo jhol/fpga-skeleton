@@ -1,0 +1,9 @@
+*.bld
+*.xrpt
+*.ngc
+*.srp
+*.lst
+*.xst
+
+xst/
+_xmsgs/
