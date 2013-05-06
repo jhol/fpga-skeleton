@@ -1,0 +1,4 @@
+PROJECT_DIR=(rtl/verilog)
+PROJECT_SRC=(
+	fpgala_top.v
+)
