@@ -21,10 +21,32 @@
 `include "timescale.v"
 
 module tb_fpgala;
+reg clk, reset;
+wire [15:0] sample;
+reg [15:0] pins;
+
+buffer frontend (
+	.clk (clk),
+	.rst (reset),
+	.in (pins),
+	.out (sample)
+);
 
 initial begin
-	$display ("Hello World");
-	#10 $finish;
+	clk = 0;
+	reset = 0;
+	pins = 0;
 end
+
+always
+	#1 clk = !clk;
+
+initial begin
+	$dumpfile ("test.vcd");
+	$dumpvars;
+end
+
+initial
+	#100 $finish;
 
 endmodule
