@@ -38,8 +38,10 @@ initial begin
 	pins = 0;
 end
 
-always
-	#1 clk = !clk;
+always begin
+	#1 pins = pins + 1;
+	clk = !clk;
+end
 
 initial begin
 	$dumpfile ("test.vcd");
